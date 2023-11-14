@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7CB4F4A3-9246-44C2-A0E3-5FEEC5331E8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{CB3F3B68-5FAC-4A67-9509-BE861A07AB8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{BFEDCB7C-12F8-4AFF-AAAD-1215820BDA5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{30CF3AE6-1DE2-438F-97BD-0776CB4B474B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30CF3AE6-1DE2-438F-97BD-0776CB4B474B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CF3AE6-1DE2-438F-97BD-0776CB4B474B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CF3AE6-1DE2-438F-97BD-0776CB4B474B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CF3AE6-1DE2-438F-97BD-0776CB4B474B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30CF3AE6-1DE2-438F-97BD-0776CB4B474B} = {CB3F3B68-5FAC-4A67-9509-BE861A07AB8D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8513563F-4B35-470A-BB89-65319F3A73F3}
+	EndGlobalSection
+EndGlobal
