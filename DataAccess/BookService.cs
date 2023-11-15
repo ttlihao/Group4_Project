@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Business.Entities;
 using Business.Repositories;
 
-namespace DataAccess.Services
+namespace DataAccess
 {
     public class BookService
     {

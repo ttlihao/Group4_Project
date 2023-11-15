@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label2 = new Label();
-            label1 = new Label();
-            label3 = new Label();
-            linkLabel1 = new LinkLabel();
-            txtEmail = new TextBox();
-            txtPassword = new TextBox();
-            btnLogin = new Button();
             label4 = new Label();
+            btnLogin = new Button();
+            txtPassword = new TextBox();
+            txtEmail = new TextBox();
+            linkLabel1 = new LinkLabel();
+            label3 = new Label();
+            label1 = new Label();
+            label2 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,99 +50,110 @@
             groupBox1.Controls.Add(linkLabel1);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(12, 145);
+            groupBox1.Location = new Point(10, 116);
+            groupBox1.Margin = new Padding(2, 2, 2, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(776, 293);
+            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Size = new Size(621, 234);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Enter += groupBox1_Enter;
             // 
-            // label2
+            // label4
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Broadway", 30F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Coral;
-            label2.Location = new Point(245, 43);
-            label2.Name = "label2";
-            label2.Size = new Size(355, 68);
-            label2.TabIndex = 2;
-            label2.Text = "e-Journal";
+            label4.AutoSize = true;
+            label4.Font = new Font("Broadway", 17F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(279, 11);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(104, 32);
+            label4.TabIndex = 6;
+            label4.Text = "Login";
             // 
-            // label1
+            // btnLogin
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Broadway", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(105, 85);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 27);
-            label1.TabIndex = 0;
-            label1.Text = "Email";
+            btnLogin.Location = new Point(279, 159);
+            btnLogin.Margin = new Padding(2, 2, 2, 2);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(90, 27);
+            btnLogin.TabIndex = 5;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
-            // label3
+            // txtPassword
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Broadway", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(56, 138);
-            label3.Name = "label3";
-            label3.Size = new Size(145, 27);
-            label3.TabIndex = 1;
-            label3.Text = "Password";
+            txtPassword.Location = new Point(186, 110);
+            txtPassword.Margin = new Padding(2, 2, 2, 2);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(293, 27);
+            txtPassword.TabIndex = 4;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(186, 67);
+            txtEmail.Margin = new Padding(2, 2, 2, 2);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(293, 27);
+            txtEmail.TabIndex = 3;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.DisabledLinkColor = Color.Red;
             linkLabel1.LinkColor = Color.Red;
-            linkLabel1.Location = new Point(268, 265);
+            linkLabel1.Location = new Point(214, 212);
+            linkLabel1.Margin = new Padding(2, 0, 2, 0);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(268, 25);
+            linkLabel1.Size = new Size(223, 20);
             linkLabel1.TabIndex = 2;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Don't have account ? Create one";
             // 
-            // txtEmail
+            // label3
             // 
-            txtEmail.Location = new Point(233, 84);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(365, 31);
-            txtEmail.TabIndex = 3;
+            label3.AutoSize = true;
+            label3.Font = new Font("Broadway", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(45, 110);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(122, 22);
+            label3.TabIndex = 1;
+            label3.Text = "Password";
             // 
-            // txtPassword
+            // label1
             // 
-            txtPassword.Location = new Point(233, 137);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(365, 31);
-            txtPassword.TabIndex = 4;
+            label1.AutoSize = true;
+            label1.Font = new Font("Broadway", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(84, 68);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 22);
+            label1.TabIndex = 0;
+            label1.Text = "Email";
             // 
-            // btnLogin
+            // label2
             // 
-            btnLogin.Location = new Point(349, 199);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(112, 34);
-            btnLogin.TabIndex = 5;
-            btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            label2.AutoSize = true;
+            label2.Font = new Font("Broadway", 30F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Coral;
+            label2.Location = new Point(196, 34);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(299, 57);
+            label2.TabIndex = 2;
+            label2.Text = "e-Journal";
             // 
-            // label4
+            // LoginForm
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Broadway", 17F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(349, 14);
-            label4.Name = "label4";
-            label4.Size = new Size(122, 38);
-            label4.TabIndex = 6;
-            label4.Text = "Login";
-            // 
-            // Form1
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(640, 360);
             Controls.Add(label2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Form1";
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             groupBox1.ResumeLayout(false);

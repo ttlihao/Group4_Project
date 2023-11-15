@@ -3,7 +3,6 @@ using Business.DTO;
 using Business.Entities;
 using Business.Mapper;
 using Business.Repositories;
-using DataAccess.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccess;
 
 namespace e_Journal
 {
