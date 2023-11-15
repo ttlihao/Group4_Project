@@ -75,6 +75,7 @@ namespace e_Journal
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
             var book = bookService.SearchBooks(txtBookName.Text);
             if (book == null)
             {
@@ -83,6 +84,28 @@ namespace e_Journal
                 return;
             }
             loadBook(book);
+
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                MessageBox.Show("The search keyword is required!!!",
+                    "Search keyword required",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string searchTerm = txtSearch.Text;
+            List<Book> searchResult = bookService.SearchBooks(searchTerm);
+            if (searchResult.Count == 0)
+            {
+                MessageBox.Show("No matching books found.",
+                    "No Results",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            dgvBook.DataSource = searchResult;
+            
+
+
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

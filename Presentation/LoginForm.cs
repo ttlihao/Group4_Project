@@ -55,6 +55,7 @@ namespace e_Journal
             }
 
 
+
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
