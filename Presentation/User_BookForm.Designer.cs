@@ -30,7 +30,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            dateRelease = new DateTimePicker();
+            dtpReleaseDate = new DateTimePicker();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -43,17 +43,17 @@
             groupBox2 = new GroupBox();
             txtSearch = new TextBox();
             btnSearch = new Button();
-            btnLogout = new Button();
-            dataGridView1 = new DataGridView();
+            btnClose = new Button();
+            dgvBook = new DataGridView();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBook).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.GradientActiveCaption;
-            groupBox1.Controls.Add(dateRelease);
+            groupBox1.Controls.Add(dtpReleaseDate);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
@@ -70,13 +70,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Infomation";
             // 
-            // dateRelease
+            // dtpReleaseDate
             // 
-            dateRelease.Location = new Point(145, 154);
-            dateRelease.Name = "dateRelease";
-            dateRelease.Size = new Size(300, 31);
-            dateRelease.TabIndex = 11;
-            dateRelease.ValueChanged += dateRelease_ValueChanged;
+            dtpReleaseDate.Location = new Point(145, 154);
+            dtpReleaseDate.Name = "dtpReleaseDate";
+            dtpReleaseDate.Size = new Size(300, 31);
+            dtpReleaseDate.TabIndex = 11;
+            dtpReleaseDate.ValueChanged += dateRelease_ValueChanged;
             // 
             // label5
             // 
@@ -162,7 +162,7 @@
             groupBox2.BackColor = Color.Linen;
             groupBox2.Controls.Add(txtSearch);
             groupBox2.Controls.Add(btnSearch);
-            groupBox2.Controls.Add(btnLogout);
+            groupBox2.Controls.Add(btnClose);
             groupBox2.Location = new Point(12, 306);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(1136, 67);
@@ -178,6 +178,7 @@
             txtSearch.PlaceholderText = "Type Book Name here ...";
             txtSearch.Size = new Size(454, 28);
             txtSearch.TabIndex = 5;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // btnSearch
             // 
@@ -187,32 +188,35 @@
             btnSearch.TabIndex = 4;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
-            // btnLogout
+            // btnClose
             // 
-            btnLogout.Location = new Point(960, 20);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(112, 34);
-            btnLogout.TabIndex = 3;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
+            btnClose.Location = new Point(960, 20);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(112, 34);
+            btnClose.TabIndex = 3;
+            btnClose.Text = "Logout";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnLogout_Click;
             // 
-            // dataGridView1
+            // dgvBook
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 379);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(1136, 325);
-            dataGridView1.TabIndex = 2;
+            dgvBook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBook.Location = new Point(12, 379);
+            dgvBook.Name = "dgvBook";
+            dgvBook.RowHeadersWidth = 62;
+            dgvBook.RowTemplate.Height = 33;
+            dgvBook.Size = new Size(1136, 325);
+            dgvBook.TabIndex = 2;
+            dgvBook.CellContentClick += dataGridView1_CellContentClick;
             // 
             // User_BookForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 716);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvBook);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "User_BookForm";
@@ -221,7 +225,7 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBook).EndInit();
             ResumeLayout(false);
         }
 
@@ -238,10 +242,10 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Button btnLogout;
-        private DataGridView dataGridView1;
-        private TextBox txtSearch;
+        private Button btnClose;
+        private DataGridView dgvBook;
         private Button btnSearch;
-        private DateTimePicker dateRelease;
+        private DateTimePicker dtpReleaseDate;
+        private TextBox txtSearch;
     }
 }

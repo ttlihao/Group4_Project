@@ -1,4 +1,10 @@
-﻿using System;
+﻿using AutoMapper;
+using Business.DTO;
+using Business.Entities;
+using Business.Mapper;
+using Business.Repositories;
+using DataAccess.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +18,88 @@ namespace e_Journal
 {
     public partial class User_BookForm : Form
     {
+        private BookService bookService = new BookService();
+        private BookRepository bookRepository = new BookRepository();
+        private BindingSource _bookSource;
         public User_BookForm()
         {
             InitializeComponent();
+            loadBook(null);
+        }
+
+        private void loadBook(List<Book> books)
+        {
+            _bookSource = new BindingSource();
+            if (books != null)
+            {
+                dgvBook.DataSource = null;
+                return;
+            }
+
+            books = books == null ? bookService.GetAllBookID() : books;
+            var config = new MapperConfiguration(cfg =>
+            {
+                BookConfig.createMap(cfg);
+            });
+
+            var mapperBookCon = config.CreateMapper();
+
+            var bookDto = books.Select(
+                book => mapperBookCon
+                .Map<Book, BookDTO>(book)
+                );
+
+            _bookSource.DataSource = bookDto;
+
+            txtBookID.DataBindings.Clear();
+            txtBookName.DataBindings.Clear();
+            txtAuthor.DataBindings.Clear();
+            txtDescription.DataBindings.Clear();
+            dtpReleaseDate.DataBindings.Clear();
+
+            txtBookID.DataBindings.Add("Text", _bookSource, "BookID");
+            txtBookName.DataBindings.Add("Text", _bookSource, "BookName");
+            txtAuthor.DataBindings.Add("Text", _bookSource, "Author");
+            txtDescription.DataBindings.Add("Text", _bookSource, "Description");
+            dtpReleaseDate.DataBindings.Add("Text", _bookSource, "Release Date");
+
+            dgvBook.DataSource = null;
+            dgvBook.DataSource = _bookSource;
+
         }
 
         private void dateRelease_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var book = bookService.SearchBooks(txtBookName.Text);
+            if (book == null)
+            {
+                MessageBox.Show("No book found !!");
+                loadBook(new List<Book>());
+                return;
+            }
+            loadBook(book);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
         }
     }
 }
