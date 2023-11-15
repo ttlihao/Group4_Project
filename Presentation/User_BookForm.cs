@@ -97,7 +97,7 @@ namespace e_Journal
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
         }

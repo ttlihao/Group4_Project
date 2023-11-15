@@ -96,7 +96,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(293, 27);
             txtEmail.TabIndex = 3;
-            txtEmail.TextChanged += txtEmail_TextChanged;
+            
             // 
             // linkLabel1
             // 
@@ -111,7 +111,7 @@
             linkLabel1.TabIndex = 2;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Don't have account ? Create one";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            linkLabel1.LinkClicked += LinkLabel1_LinkClicked;
             // 
             // label3
             // 
@@ -176,5 +176,6 @@
         private TextBox txtEmail;
         private LinkLabel linkLabel1;
         private Label label4;
+        private LinkLabelLinkClickedEventHandler linkLabel1_LinkClicked;
     }
 }

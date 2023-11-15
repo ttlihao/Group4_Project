@@ -29,8 +29,8 @@ namespace e_Journal
             }
             else if (account.RoleId == 1)
             {
-                BookManagementForm bookMgt = new BookManagementForm();
-                bookMgt.Show();
+                BookManagementForm bookMg = new BookManagementForm();
+                bookMg.ShowDialog();
                 this.Hide();
 
             }
@@ -56,15 +56,15 @@ namespace e_Journal
                                     MessageBoxIcon.Error);
                 return;
             }
-<<<<<<< Updated upstream
-=======
+
+
             BookManagementForm bookMgt = new BookManagementForm();
             bookMgt.Show();
             this.Hide();
 
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             
             CreateUserForm createUserForm = new CreateUserForm();
@@ -72,10 +72,6 @@ namespace e_Journal
             
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
->>>>>>> Stashed changes
-
-        }
+       
     }
 }
