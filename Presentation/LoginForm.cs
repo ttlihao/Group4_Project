@@ -55,13 +55,6 @@ namespace e_Journal
             }
 
 
-<<<<<<< Updated upstream
-=======
-            //BookManagementForm bookMgt = new BookManagementForm();
-           // bookMgt.Show();
-            //this.Hide();
-
->>>>>>> Stashed changes
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

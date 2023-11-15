@@ -62,13 +62,5 @@ namespace DataAccess.Repositories
             }
         }
 
-        internal List<Book> SearchBooks(string bookName)
-        {
-            using (var dbContext = new BookScienceContext())
-            {
-                return dbContext.Books.Where(book => book.BookName.Contains(bookName)).ToList();
-
-            }
-        }
     }
 }

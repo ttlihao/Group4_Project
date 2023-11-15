@@ -41,10 +41,10 @@
             txtBookName = new TextBox();
             txtBookID = new TextBox();
             groupBox2 = new GroupBox();
+            txtSearch = new TextBox();
             btnSearch = new Button();
             btnClose = new Button();
             dgvBook = new DataGridView();
-            txtSearch = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBook).BeginInit();
@@ -63,193 +63,110 @@
             groupBox1.Controls.Add(txtAuthor);
             groupBox1.Controls.Add(txtBookName);
             groupBox1.Controls.Add(txtBookID);
-<<<<<<< Updated upstream
             groupBox1.Location = new Point(8, 7);
             groupBox1.Margin = new Padding(2, 2, 2, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(2, 2, 2, 2);
             groupBox1.Size = new Size(795, 173);
-=======
-            groupBox1.Location = new Point(10, 10);
-            groupBox1.Margin = new Padding(2);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2);
-            groupBox1.Size = new Size(909, 230);
->>>>>>> Stashed changes
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Infomation";
             // 
             // dtpReleaseDate
             // 
-<<<<<<< Updated upstream
             dtpReleaseDate.Location = new Point(102, 92);
             dtpReleaseDate.Margin = new Padding(2, 2, 2, 2);
             dtpReleaseDate.Name = "dtpReleaseDate";
             dtpReleaseDate.Size = new Size(211, 23);
-=======
-            dtpReleaseDate.Location = new Point(116, 123);
-            dtpReleaseDate.Margin = new Padding(2);
-            dtpReleaseDate.Name = "dtpReleaseDate";
-            dtpReleaseDate.Size = new Size(241, 27);
->>>>>>> Stashed changes
             dtpReleaseDate.TabIndex = 11;
             dtpReleaseDate.ValueChanged += dateRelease_ValueChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
-<<<<<<< Updated upstream
             label5.Location = new Point(399, 29);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(44, 15);
-=======
-            label5.Location = new Point(456, 38);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(54, 20);
->>>>>>> Stashed changes
             label5.TabIndex = 9;
             label5.Text = "Author";
             // 
             // label4
             // 
             label4.AutoSize = true;
-<<<<<<< Updated upstream
             label4.Location = new Point(19, 96);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(73, 15);
-=======
-            label4.Location = new Point(22, 128);
-            label4.Margin = new Padding(2, 0, 2, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(96, 20);
->>>>>>> Stashed changes
             label4.TabIndex = 8;
             label4.Text = "Release Date";
             // 
             // label3
             // 
             label3.AutoSize = true;
-<<<<<<< Updated upstream
             label3.Location = new Point(382, 64);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(67, 15);
-=======
-            label3.Location = new Point(436, 86);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(85, 20);
->>>>>>> Stashed changes
             label3.TabIndex = 7;
             label3.Text = "Description";
             // 
             // label2
             // 
             label2.AutoSize = true;
-<<<<<<< Updated upstream
             label2.Location = new Point(24, 64);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(69, 15);
-=======
-            label2.Location = new Point(27, 86);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(87, 20);
->>>>>>> Stashed changes
             label2.TabIndex = 6;
             label2.Text = "Book Name";
             // 
             // label1
             // 
             label1.AutoSize = true;
-<<<<<<< Updated upstream
             label1.Location = new Point(44, 27);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(48, 15);
-=======
-            label1.Location = new Point(50, 36);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(62, 20);
->>>>>>> Stashed changes
             label1.TabIndex = 5;
             label1.Text = "Book ID";
             // 
             // txtDescription
             // 
-<<<<<<< Updated upstream
             txtDescription.Location = new Point(457, 61);
             txtDescription.Margin = new Padding(2, 2, 2, 2);
-=======
-            txtDescription.Location = new Point(522, 81);
-            txtDescription.Margin = new Padding(2);
->>>>>>> Stashed changes
             txtDescription.Multiline = true;
             txtDescription.Name = "txtDescription";
             txtDescription.ReadOnly = true;
             txtDescription.ScrollBars = ScrollBars.Vertical;
-<<<<<<< Updated upstream
             txtDescription.Size = new Size(294, 110);
-=======
-            txtDescription.Size = new Size(336, 146);
->>>>>>> Stashed changes
             txtDescription.TabIndex = 4;
             // 
             // txtAuthor
             // 
-<<<<<<< Updated upstream
             txtAuthor.Location = new Point(457, 27);
             txtAuthor.Margin = new Padding(2, 2, 2, 2);
             txtAuthor.Name = "txtAuthor";
             txtAuthor.ReadOnly = true;
             txtAuthor.Size = new Size(294, 23);
-=======
-            txtAuthor.Location = new Point(522, 36);
-            txtAuthor.Margin = new Padding(2);
-            txtAuthor.Name = "txtAuthor";
-            txtAuthor.ReadOnly = true;
-            txtAuthor.Size = new Size(336, 27);
->>>>>>> Stashed changes
             txtAuthor.TabIndex = 3;
             // 
             // txtBookName
             // 
-<<<<<<< Updated upstream
             txtBookName.Location = new Point(102, 61);
             txtBookName.Margin = new Padding(2, 2, 2, 2);
             txtBookName.Name = "txtBookName";
             txtBookName.ReadOnly = true;
             txtBookName.Size = new Size(211, 23);
-=======
-            txtBookName.Location = new Point(116, 81);
-            txtBookName.Margin = new Padding(2);
-            txtBookName.Name = "txtBookName";
-            txtBookName.ReadOnly = true;
-            txtBookName.Size = new Size(241, 27);
->>>>>>> Stashed changes
             txtBookName.TabIndex = 2;
             // 
             // txtBookID
             // 
-<<<<<<< Updated upstream
             txtBookID.Location = new Point(102, 27);
             txtBookID.Margin = new Padding(2, 2, 2, 2);
             txtBookID.Name = "txtBookID";
             txtBookID.ReadOnly = true;
             txtBookID.Size = new Size(211, 23);
-=======
-            txtBookID.Location = new Point(116, 36);
-            txtBookID.Margin = new Padding(2);
-            txtBookID.Name = "txtBookID";
-            txtBookID.ReadOnly = true;
-            txtBookID.Size = new Size(241, 27);
->>>>>>> Stashed changes
             txtBookID.TabIndex = 0;
             txtBookID.TextChanged += txtBookID_TextChanged;
             // 
@@ -259,24 +176,15 @@
             groupBox2.Controls.Add(txtSearch);
             groupBox2.Controls.Add(btnSearch);
             groupBox2.Controls.Add(btnClose);
-<<<<<<< Updated upstream
             groupBox2.Location = new Point(8, 184);
             groupBox2.Margin = new Padding(2, 2, 2, 2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(2, 2, 2, 2);
             groupBox2.Size = new Size(795, 40);
-=======
-            groupBox2.Location = new Point(10, 245);
-            groupBox2.Margin = new Padding(2);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(2);
-            groupBox2.Size = new Size(909, 54);
->>>>>>> Stashed changes
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "To-do";
             // 
-<<<<<<< Updated upstream
             // txtSearch
             // 
             txtSearch.Font = new Font("Times New Roman", 9F, FontStyle.Italic, GraphicsUnit.Point);
@@ -294,14 +202,6 @@
             btnSearch.Margin = new Padding(2, 2, 2, 2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(78, 20);
-=======
-            // btnSearch
-            // 
-            btnSearch.Location = new Point(612, 16);
-            btnSearch.Margin = new Padding(2);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(90, 27);
->>>>>>> Stashed changes
             btnSearch.TabIndex = 4;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
@@ -309,17 +209,10 @@
             // 
             // btnClose
             // 
-<<<<<<< Updated upstream
             btnClose.Location = new Point(672, 12);
             btnClose.Margin = new Padding(2, 2, 2, 2);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(78, 20);
-=======
-            btnClose.Location = new Point(768, 16);
-            btnClose.Margin = new Padding(2);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(90, 27);
->>>>>>> Stashed changes
             btnClose.TabIndex = 3;
             btnClose.Text = "Logout";
             btnClose.UseVisualStyleBackColor = true;
@@ -328,35 +221,17 @@
             // dgvBook
             // 
             dgvBook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< Updated upstream
             dgvBook.Location = new Point(8, 227);
             dgvBook.Margin = new Padding(2, 2, 2, 2);
             dgvBook.Name = "dgvBook";
             dgvBook.RowHeadersWidth = 62;
             dgvBook.RowTemplate.Height = 33;
             dgvBook.Size = new Size(795, 195);
-=======
-            dgvBook.Location = new Point(10, 303);
-            dgvBook.Margin = new Padding(2);
-            dgvBook.Name = "dgvBook";
-            dgvBook.RowHeadersWidth = 62;
-            dgvBook.RowTemplate.Height = 33;
-            dgvBook.Size = new Size(909, 260);
->>>>>>> Stashed changes
             dgvBook.TabIndex = 2;
             dgvBook.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(207, 16);
-            txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Enter Book Name";
-            txtSearch.Size = new Size(354, 27);
-            txtSearch.TabIndex = 5;
-            // 
             // User_BookForm
             // 
-<<<<<<< Updated upstream
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(812, 430);
@@ -364,15 +239,6 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Margin = new Padding(2, 2, 2, 2);
-=======
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(928, 573);
-            Controls.Add(dgvBook);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Margin = new Padding(2);
->>>>>>> Stashed changes
             Name = "User_BookForm";
             Text = "Book";
             groupBox1.ResumeLayout(false);
