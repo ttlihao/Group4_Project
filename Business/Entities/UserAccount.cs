@@ -11,7 +11,7 @@ public partial class UserAccount
 
     public string UserPassword { get; set; } = null!;
 
-    public string? UserAddress { get; set; }
+    public string? UserAddress { get; set; } = null!;
 
     public string? UserPhone { get; set; }
 
