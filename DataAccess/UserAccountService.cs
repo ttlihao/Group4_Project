@@ -18,5 +18,10 @@ namespace DataAccess
 
             return account != null && account.UserPassword == password ? account : null;
         }
+        public void Create(UserAccount account)
+        {
+            UserAccountRepository repo = new UserAccountRepository();
+            repo.Create(account);
+        }
     }
 }

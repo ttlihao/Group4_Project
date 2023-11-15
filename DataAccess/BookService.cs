@@ -33,9 +33,11 @@ namespace DataAccess
             return repo.Get(id);
         }
 
-        public void AddABook(Book book)
+        public void Create(Book book)
         {
+            
             repo.Create(book);
+
         }
 
         public void UpdateABook(Book book)

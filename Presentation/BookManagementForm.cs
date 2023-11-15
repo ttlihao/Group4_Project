@@ -89,15 +89,19 @@ namespace e_Journal
             dgvBookList.DataSource = result;
         }
 
+<<<<<<< Updated upstream
         private void txtBookID_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+=======
+>>>>>>> Stashed changes
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
         }
+<<<<<<< Updated upstream
 
         private void dgvBookList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -108,5 +112,7 @@ namespace e_Journal
         {
 
         }
+=======
+>>>>>>> Stashed changes
     }
 }

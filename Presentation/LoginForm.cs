@@ -17,7 +17,7 @@ namespace e_Journal
         {
             string email = txtEmail.Text; //TODO:kiểm tra rỗng!!!
             string password = txtPassword.Text; //TODO: kiểm tra rỗng
-            UserAccountService  se = new UserAccountService(); ;
+            UserAccountService se = new UserAccountService(); ;
 
             UserAccount account = se.CheckLogin(email, password);
             if (account == null)
@@ -56,6 +56,25 @@ namespace e_Journal
                                     MessageBoxIcon.Error);
                 return;
             }
+<<<<<<< Updated upstream
+=======
+            BookManagementForm bookMgt = new BookManagementForm();
+            bookMgt.Show();
+            this.Hide();
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+            CreateUserForm createUserForm = new CreateUserForm();
+            createUserForm.Show();
+            
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+>>>>>>> Stashed changes
 
         }
     }

@@ -14,5 +14,11 @@ namespace DataAccess.Repositories
             BookScienceContext db = new BookScienceContext();
             return db.UserAccounts.FirstOrDefault(x => x.UserAddress == email);
         }
+        public void Create(UserAccount userAccount)
+        {
+            BookScienceContext context = new BookScienceContext();
+            context.Add(userAccount);
+            context.SaveChanges();
+        }
     }
 }

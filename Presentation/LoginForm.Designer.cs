@@ -51,9 +51,9 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(10, 116);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Padding = new Padding(2);
             groupBox1.Size = new Size(621, 234);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
@@ -72,7 +72,7 @@
             // btnLogin
             // 
             btnLogin.Location = new Point(279, 159);
-            btnLogin.Margin = new Padding(2, 2, 2, 2);
+            btnLogin.Margin = new Padding(2);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(90, 27);
             btnLogin.TabIndex = 5;
@@ -83,7 +83,7 @@
             // txtPassword
             // 
             txtPassword.Location = new Point(186, 110);
-            txtPassword.Margin = new Padding(2, 2, 2, 2);
+            txtPassword.Margin = new Padding(2);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(293, 27);
@@ -92,16 +92,18 @@
             // txtEmail
             // 
             txtEmail.Location = new Point(186, 67);
-            txtEmail.Margin = new Padding(2, 2, 2, 2);
+            txtEmail.Margin = new Padding(2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(293, 27);
             txtEmail.TabIndex = 3;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.DisabledLinkColor = Color.Red;
             linkLabel1.LinkColor = Color.Red;
+            linkLabel1.LinkVisited = true;
             linkLabel1.Location = new Point(214, 212);
             linkLabel1.Margin = new Padding(2, 0, 2, 0);
             linkLabel1.Name = "linkLabel1";
@@ -109,6 +111,7 @@
             linkLabel1.TabIndex = 2;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Don't have account ? Create one";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label3
             // 
@@ -152,7 +155,7 @@
             Controls.Add(label2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
