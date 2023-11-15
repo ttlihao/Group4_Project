@@ -21,3 +21,11 @@ CREATE TABLE Book (
     ReleaseDate DATE,
     IsActived BIT
 );
+
+-- Insert records into UserAccount
+INSERT INTO UserAccount (UserName, UserPassword, UserAddress, UserPhone, RoleID)
+VALUES
+    ('Alice', 'password123', '123 Main St', '555-1234', 1),
+    ('Bob', 'secret456', '456 Elm St', '555-5678', 2),
+    ('Charlie', 'qwerty789', '789 Oak Ave', '555-9876', 1),
+    ('Zara', 'zara123', '987 Pine Rd', '555-4321', 2);

@@ -21,8 +21,19 @@ namespace Business.Repositories
 
         public List<Book> GetAll()
         {
-            context = new BookScienceContext();
-            return context.Books.Include(id => id.BookId).ToList();
+            List<Book> books;
+            IQueryable<Book> query = null;
+            try
+            {
+                using BookScienceContext context = new BookScienceContext();
+                query = context.Books;
+                books = query.ToList();
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return books;
         }
 
         public void Create(Book book)

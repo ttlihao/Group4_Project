@@ -714,3 +714,4 @@ wwwrootnode_modules
 # Additional files built by Visual Studio
 
 # End of httpswww.toptal.comdevelopersgitignoreapivisualstudio,aspnetcore,dotnetcore,csharp
+Business/appsettings.json
