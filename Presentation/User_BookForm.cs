@@ -101,5 +101,10 @@ namespace e_Journal
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
         }
+
+        private void txtBookID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

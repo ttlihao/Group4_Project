@@ -1,8 +1,5 @@
 ﻿using Business.Entities;
-using DataAccess.Repositories;
 using DataAccess;
-using Microsoft.Extensions.Configuration;
-using System.Configuration;
 
 namespace e_Journal
 {
@@ -15,11 +12,11 @@ namespace e_Journal
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text; //TODO:kiểm tra rỗng!!!
-            string password = txtPassword.Text; //TODO: kiểm tra rỗng
+            string email = txtEmail.Text;
+            string password = txtPassword.Text; 
             UserAccountService se = new UserAccountService(); ;
 
-            UserAccount account = se.CheckLogin(email, password);
+            UserAccount account = se.CheckLogin(email,password);
             if (account == null)
             {
                 MessageBox.Show("Login failed. Please check your credentials",
@@ -30,7 +27,7 @@ namespace e_Journal
             else if (account.RoleId == 1)
             {
                 BookManagementForm bookMg = new BookManagementForm();
-                bookMg.ShowDialog();
+                bookMg.Show();
                 this.Hide();
 
             }
@@ -47,7 +44,7 @@ namespace e_Journal
 
                     throw;
                 }
-                
+
             }
             else
             {
@@ -58,20 +55,23 @@ namespace e_Journal
             }
 
 
-            BookManagementForm bookMgt = new BookManagementForm();
-            bookMgt.Show();
-            this.Hide();
-
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+
             CreateUserForm createUserForm = new CreateUserForm();
             createUserForm.Show();
-            
+
+        }
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
-       
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

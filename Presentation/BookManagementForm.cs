@@ -69,13 +69,20 @@ namespace e_Journal
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int id;
+            int id = int.Parse(txtBookID.Text);
             if (string.IsNullOrWhiteSpace(txtBookID.Text) || !int.TryParse(txtBookID.Text, out id))
             {
                 MessageBox.Show("The Book ID is invalid. Please select a row in the grid to edit or input a number!!!",
                     "Invalid Book ID",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
+            }
+            else
+            {
+                bookService.DeleteABook(id);
+                var result = bookService.GetAllBookID();
+                dgvBookList.DataSource = null;
+                dgvBookList.DataSource = result;
             }
 
         }

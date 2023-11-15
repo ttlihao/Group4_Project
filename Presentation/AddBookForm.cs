@@ -39,7 +39,7 @@ namespace e_Journal
             book.BookName = txtBookName.Text;
             book.BookDescription = txtDescription.Text;
             book.Author = txtAuthor.Text;
-            book.ReleaseDate = DateTime.Parse(dateTimePicker1.Text);
+            book.ReleaseDate = dateTimePicker1.Value;
             book.IsActived = false;
             BookRepository bookRepository = new BookRepository();
             bookRepository.Create(book);
