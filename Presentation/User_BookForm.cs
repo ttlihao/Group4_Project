@@ -75,14 +75,10 @@ namespace e_Journal
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var book = bookService.SearchBooks(txtBookName.Text);
-            if (book == null)
-            {
-                MessageBox.Show("No book found !!");
-                loadBook(new List<Book>());
-                return;
-            }
-            loadBook(book);
+            string searchTerm = txtSearch.Text;
+            List<Book> searchResult = bookService.SearchBooks(searchTerm);
+            dgvBook.DataSource = searchResult;
+            
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

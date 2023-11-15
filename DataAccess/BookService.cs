@@ -17,10 +17,9 @@ namespace DataAccess
             return repo.GetAll();
         }
 
-        public List<Book> SearchBooks(string keyword)
+        public List<Book> SearchBooks(string BookName)
         {
-            return repo.GetAll().Where(b => b.BookName.ToLower().Contains(keyword.ToLower()) ||
-                                             b.BookDescription.ToLower().Contains(keyword.ToLower())).ToList();
+            return repo.SearchBooks(BookName);
         }
 
         public void DeleteABook(int id)
