@@ -3,7 +3,7 @@ using Business.Repositories;
 
 namespace Service
 {
-    public class Service
+    public class BookService
     {
         private BookRepository repo = new BookRepository();
 

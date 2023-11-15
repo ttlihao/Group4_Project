@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{30CF3AE6-1DE2-438F-97BD-0776CB4B474B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejournal_group4", "Ejournal_group4\Ejournal_group4.csproj", "{036593BF-8276-4BB2-A3C9-1C5BAAFCC4BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejournal_group4", "Ejournal_group4\Ejournal_group4.csproj", "{036593BF-8276-4BB2-A3C9-1C5BAAFCC4BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookService", "BookService\BookService.csproj", "{F26A1CAE-2B5A-4A4F-8ECD-5C0248DFEA1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "BookService\Service.csproj", "{F26A1CAE-2B5A-4A4F-8ECD-5C0248DFEA1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

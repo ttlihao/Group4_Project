@@ -200,6 +200,7 @@
             btnDelete.TabIndex = 2;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 
@@ -210,6 +211,7 @@
             btnUpdate.TabIndex = 1;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnSave
             // 
@@ -220,6 +222,7 @@
             btnSave.TabIndex = 0;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // gbSearch
             // 
@@ -248,6 +251,7 @@
             btnSearch.TabIndex = 1;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // label7
             // 
@@ -267,6 +271,7 @@
             dgvBookList.RowTemplate.Height = 29;
             dgvBookList.Size = new Size(530, 475);
             dgvBookList.TabIndex = 4;
+            dgvBookList.SelectionChanged += dgvBookList_SelectionChanged;
             // 
             // BookManagementForm
             // 
