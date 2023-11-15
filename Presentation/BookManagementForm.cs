@@ -78,11 +78,6 @@ namespace e_Journal
                 return;
             }
 
-            AddBookForm bookForm = new AddBookForm();
-            bookForm.ShowDialog();
-            var result = bookService.GetAllBookID();
-            dgvBookList.DataSource = null;
-            dgvBookList.DataSource = result;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -92,6 +87,26 @@ namespace e_Journal
             var result = bookService.GetAllBookID();
             dgvBookList.DataSource = null;
             dgvBookList.DataSource = result;
+        }
+
+        private void txtBookID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvBookList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Repositories
+namespace DataAccess.Repositories
 {
     public class BookRepository
     {
@@ -28,7 +28,8 @@ namespace Business.Repositories
                 using BookScienceContext context = new BookScienceContext();
                 query = context.Books;
                 books = query.ToList();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex);
             }
@@ -46,7 +47,7 @@ namespace Business.Repositories
         public void Update(Book book)
         {
             context = new BookScienceContext();
-            context.Books.Update(book); 
+            context.Books.Update(book);
             context.SaveChanges();
         }
 

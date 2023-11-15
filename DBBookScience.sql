@@ -29,3 +29,14 @@ VALUES
     ('Bob', 'secret456', '456 Elm St', '555-5678', 2),
     ('Charlie', 'qwerty789', '789 Oak Ave', '555-9876', 1),
     ('Zara', 'zara123', '987 Pine Rd', '555-4321', 2);
+
+-- Insert records into Book
+INSERT INTO Book (BookName, BookDescription, Author, ReleaseDate, IsActived)
+VALUES
+    ('The Great Gatsby', 'Classic novel', 'F. Scott Fitzgerald', '1925-04-10', 1),
+    ('To Kill a Mockingbird', 'Coming-of-age story', 'Harper Lee', '1960-07-11', 1),
+    ('Pride and Prejudice', 'Romantic novel', 'Jane Austen', '1813-01-28', 1),
+    ('1984', 'Dystopian fiction', 'George Orwell', '1949-06-08', 1);
+
+	select * from UserAccount
+	select * from Book

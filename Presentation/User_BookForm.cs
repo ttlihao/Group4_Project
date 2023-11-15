@@ -2,7 +2,6 @@
 using Business.DTO;
 using Business.Entities;
 using Business.Mapper;
-using Business.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess;
+using DataAccess.Repositories;
 
 namespace e_Journal
 {
@@ -60,8 +60,8 @@ namespace e_Journal
             txtBookID.DataBindings.Add("Text", _bookSource, "BookID");
             txtBookName.DataBindings.Add("Text", _bookSource, "BookName");
             txtAuthor.DataBindings.Add("Text", _bookSource, "Author");
-            txtDescription.DataBindings.Add("Text", _bookSource, "Description");
-            dtpReleaseDate.DataBindings.Add("Text", _bookSource, "Release Date");
+            txtDescription.DataBindings.Add("Text", _bookSource, "BookDescription");
+            dtpReleaseDate.DataBindings.Add("Value", _bookSource, "ReleaseDate");
 
             dgvBook.DataSource = null;
             dgvBook.DataSource = _bookSource;

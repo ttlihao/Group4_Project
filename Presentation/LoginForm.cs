@@ -1,5 +1,5 @@
 ﻿using Business.Entities;
-using Business.Repositories;
+using DataAccess.Repositories;
 using DataAccess;
 using Microsoft.Extensions.Configuration;
 using System.Configuration;
@@ -27,17 +27,36 @@ namespace e_Journal
                                  MessageBoxIcon.Error);
                 return;
             }
-            if (account.RoleId != 1)
+            else if (account.RoleId == 1)
+            {
+                BookManagementForm bookMgt = new BookManagementForm();
+                bookMgt.Show();
+                this.Hide();
+
+            }
+            else if (account.RoleId == 2)
+            {
+                User_BookForm bookForm = new User_BookForm();
+                try
+                {
+                    bookForm.Show();
+                    this.Hide();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                
+            }
+            else
             {
                 MessageBox.Show("You are not allowed to access this function!",
-                                "Access denied", MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                                    "Access denied", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
                 return;
             }
-            BookManagementForm bookMgt = new BookManagementForm();
-            bookMgt.Show(); 
-            this.Hide(); 
-        
+
         }
     }
 }

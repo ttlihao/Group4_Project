@@ -4,7 +4,7 @@ using Business.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Business.Repositories;
+namespace DataAccess.Repositories;
 
 public partial class BookScienceContext : DbContext
 {
