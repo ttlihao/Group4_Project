@@ -12,7 +12,7 @@ namespace DataAccess
     {
         private BookRepository repo = new BookRepository();
 
-        public List<Book> GetAllBookID()
+        public List<Book> GetAllBooks()
         {
             return repo.GetAll();
         }

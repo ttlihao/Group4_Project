@@ -23,7 +23,7 @@ namespace e_Journal
 
         private void BookManagementForm_Load(object sender, EventArgs e)
         {
-            var result = bookService.GetAllBookID();
+            var result = bookService.GetAllBooks();
             dgvBookList.DataSource = null;
             dgvBookList.DataSource = result;
         }
@@ -42,12 +42,24 @@ namespace e_Journal
         {
             if (dgvBookList.SelectedRows.Count > 0)
             {
-                var selectedBook = (Book)dgvBookList.SelectedRows[0].DataBoundItem;
-                txtBookID.Text = selectedBook.BookId.ToString();
-                txtBookName.Text = selectedBook.BookName;
-                txtDescription.Text = selectedBook.BookDescription;
-                dtpReleaseDate.Value = selectedBook.ReleaseDate;
-                txtAuthor.Text = selectedBook.Author;
+                var selectedRow = dgvBookList.SelectedRows[0];
+
+                var dataItem = selectedRow.DataBoundItem;
+
+                if (dataItem != null)
+                {
+                    var bookId = (int)dataItem.GetType().GetProperty("BookId").GetValue(dataItem, null);
+                    var bookName = (string)dataItem.GetType().GetProperty("BookName").GetValue(dataItem, null);
+                    var bookDescription = (string)dataItem.GetType().GetProperty("BookDescription").GetValue(dataItem, null);
+                    var releaseDate = (DateTime)dataItem.GetType().GetProperty("ReleaseDate").GetValue(dataItem, null);
+                    var author = (string)dataItem.GetType().GetProperty("Author").GetValue(dataItem, null);
+
+                    txtBookID.Text = bookId.ToString();
+                    txtBookName.Text = bookName;
+                    txtDescription.Text = bookDescription;
+                    dtpReleaseDate.Value = releaseDate;
+                    txtAuthor.Text = author;
+                }
             }
         }
 
@@ -69,21 +81,20 @@ namespace e_Journal
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtBookID.Text);
+            int id;
+
             if (string.IsNullOrWhiteSpace(txtBookID.Text) || !int.TryParse(txtBookID.Text, out id))
             {
-                MessageBox.Show("The Book ID is invalid. Please select a row in the grid to edit or input a number!!!",
+                MessageBox.Show("The Book ID is invalid. Please input a number!!!",
                     "Invalid Book ID",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            else
-            {
-                bookService.DeleteABook(id);
-                var result = bookService.GetAllBookID();
-                dgvBookList.DataSource = null;
-                dgvBookList.DataSource = result;
-            }
+            bookService.DeleteABook(id);
+
+            var result = bookService.GetAllBooks();
+            dgvBookList.DataSource = null;
+            dgvBookList.DataSource = result;
 
         }
 
@@ -91,21 +102,39 @@ namespace e_Journal
         {
             AddBookForm bookForm = new AddBookForm();
             bookForm.ShowDialog();
-            var result = bookService.GetAllBookID();
+            var result = bookService.GetAllBooks();
             dgvBookList.DataSource = null;
             dgvBookList.DataSource = result;
         }
 
-
-        private void txtBookID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtBookID.Text))
+            {
+                MessageBox.Show("Please select a book to update.",
+                    "Book not selected",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int id = int.Parse(txtBookID.Text);
+            Book selectedBook = bookService.GetABook(id);
 
+            if (selectedBook == null)
+            {
+                MessageBox.Show("Invalid book ID. Please select a valid book to update.",
+                    "Invalid Book ID",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            AddBookForm updateForm = new AddBookForm();
+            updateForm.SetBookToUpdate(selectedBook);
+            updateForm.ShowDialog();
+
+            // After the update form is closed, refresh the data grid view
+            var result = bookService.GetAllBooks();
+            dgvBookList.DataSource = null;
+            dgvBookList.DataSource = result;
         }
 
 
@@ -119,5 +148,9 @@ namespace e_Journal
 
         }
 
+        private void txtBookID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
