@@ -47,8 +47,21 @@ namespace DataAccess.Repositories
         public void Update(Book book)
         {
             context = new BookScienceContext();
-            context.Books.Update(book);
-            context.SaveChanges();
+            try
+            {
+                var newB = Get(book.BookId);
+                newB.BookName = book.BookName;
+                newB.Author= book.Author;
+                newB.BookDescription= book.BookDescription;
+                newB.ReleaseDate= book.ReleaseDate;
+                newB.IsActived= book.IsActived;
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void Delete(int id)

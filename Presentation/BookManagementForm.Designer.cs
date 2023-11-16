@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
+            isActive = new CheckBox();
             dtpReleaseDate = new DateTimePicker();
-            rdActive = new RadioButton();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -59,8 +59,8 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.GradientActiveCaption;
+            groupBox1.Controls.Add(isActive);
             groupBox1.Controls.Add(dtpReleaseDate);
-            groupBox1.Controls.Add(rdActive);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
@@ -78,6 +78,17 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Infomation";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // isActive
+            // 
+            isActive.AutoSize = true;
+            isActive.Location = new Point(102, 132);
+            isActive.Name = "isActive";
+            isActive.Size = new Size(67, 19);
+            isActive.TabIndex = 12;
+            isActive.Text = "isActive";
+            isActive.UseVisualStyleBackColor = true;
             // 
             // dtpReleaseDate
             // 
@@ -86,18 +97,7 @@
             dtpReleaseDate.Name = "dtpReleaseDate";
             dtpReleaseDate.Size = new Size(211, 23);
             dtpReleaseDate.TabIndex = 11;
-            // 
-            // rdActive
-            // 
-            rdActive.AutoSize = true;
-            rdActive.Location = new Point(102, 126);
-            rdActive.Margin = new Padding(2);
-            rdActive.Name = "rdActive";
-            rdActive.Size = new Size(58, 19);
-            rdActive.TabIndex = 10;
-            rdActive.TabStop = true;
-            rdActive.Text = "Active";
-            rdActive.UseVisualStyleBackColor = true;
+            dtpReleaseDate.ValueChanged += dtpReleaseDate_ValueChanged;
             // 
             // label5
             // 
@@ -317,7 +317,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private RadioButton rdActive;
         private Button btnClose;
         private Button btnUpdate;
         private Button btnDelete;
@@ -327,5 +326,6 @@
         private Button btnSearch;
         private DateTimePicker dtpReleaseDate;
         private BindingSource bookServiceBindingSource;
+        private CheckBox isActive;
     }
 }

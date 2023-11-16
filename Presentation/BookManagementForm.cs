@@ -1,4 +1,5 @@
-﻿using Business.Entities;
+﻿using AutoMapper.Execution;
+using Business.Entities;
 using DataAccess;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,7 @@ namespace e_Journal
                 txtDescription.Text = selectedBook.BookDescription;
                 dtpReleaseDate.Value = selectedBook.ReleaseDate;
                 txtAuthor.Text = selectedBook.Author;
+                isActive.Checked = (bool)selectedBook.IsActived;
             }
         }
 
@@ -105,7 +107,48 @@ namespace e_Journal
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            var book = GetBookObject();
+            try
+            {
+                if (book != null && txtBookName != null)
+                {
+                    bookService.UpdateABook(book);
+                    var result = bookService.GetAllBookID();
+                    dgvBookList.DataSource = null;
+                    dgvBookList.DataSource = result;
+                }
+            }
+            catch (Exception)
+            {
 
+                throw new Exception("Update book fail. Duplicated book!");
+            }
+
+        }
+        private Book GetBookObject()
+        {
+            Book book = null;
+            try
+            {
+                if (!txtBookName.Text.Equals("") || !txtAuthor.Text.Equals(""))
+                {
+                    book = new Book
+                    {
+                        BookId = int.Parse(txtBookID.Text),
+                        Author = txtAuthor.Text,
+                        BookName = txtBookName.Text,
+                        BookDescription = txtDescription.Text,
+                        ReleaseDate = dtpReleaseDate.Value,
+                        IsActived = isActive.Checked
+                    };
+                }
+                else throw new Exception("Book Name and Author can not be null!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get Book");
+            }
+            return book;
         }
 
 
@@ -119,5 +162,14 @@ namespace e_Journal
 
         }
 
+        private void dtpReleaseDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

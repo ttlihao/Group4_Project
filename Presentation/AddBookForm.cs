@@ -44,6 +44,7 @@ namespace e_Journal
             BookRepository bookRepository = new BookRepository();
             bookRepository.Create(book);
             MessageBox.Show("Add successfully!!");
+            this.Hide();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -57,6 +58,33 @@ namespace e_Journal
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_Validating(object sender, CancelEventArgs e)
+        {
+            if (dateTimePicker1.Value > DateTime.Now)
+            {
+                errorProviderDate.SetError(dateTimePicker1, "Choose a time sooner than the current time.");
+            }
+            else
+            {
+                errorProviderDate.SetError(dateTimePicker1, "");
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -22,6 +22,10 @@ namespace DataAccess
             return repo.GetAll().Where(b => b.BookName.ToLower().Contains(keyword.ToLower()) ||
                                              b.BookDescription.ToLower().Contains(keyword.ToLower())).ToList();
         }
+        public List<Book> GetAllActiveBooks()
+        {
+            return repo.GetAll().Where(b => b.IsActived == true ).ToList();
+        }
 
         public void DeleteABook(int id)
         {
