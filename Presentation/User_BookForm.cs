@@ -36,7 +36,7 @@ namespace e_Journal
                 return;
             }
 
-            books = books == null ? bookService.GetAllBookID() : books;
+            books = books == null ? bookService.GetAllBooks() : books;
             var config = new MapperConfiguration(cfg =>
             {
                 BookConfig.createMap(cfg);

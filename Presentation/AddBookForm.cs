@@ -90,7 +90,7 @@ namespace e_Journal
                 bookRepository.Create(book);
                 MessageBox.Show("Add successfully!!");
             }
-            
+
             this.Close();
         }
 

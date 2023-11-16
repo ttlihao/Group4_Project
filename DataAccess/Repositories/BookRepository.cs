@@ -21,7 +21,7 @@ namespace DataAccess.Repositories
 
         public List<Book> GetAll()
         {
-            List<Book> books;
+            /*List<Book> books;
             IQueryable<Book> query = null;
             try
             {
@@ -34,7 +34,12 @@ namespace DataAccess.Repositories
                 throw new Exception(ex.Message, ex);
             }
 
-            return books;
+            return books;*/
+
+            using (var context = new BookScienceContext())
+            {
+                return context.Books.ToList();
+            }
         }
 
         public void Create(Book book)

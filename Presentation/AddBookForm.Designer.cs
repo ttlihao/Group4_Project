@@ -180,7 +180,7 @@
             btnAddBook.Name = "btnAddBook";
             btnAddBook.Size = new Size(90, 27);
             btnAddBook.TabIndex = 8;
-            btnAddBook.Text = "Add";
+            btnAddBook.Text = "Save";
             btnAddBook.UseVisualStyleBackColor = true;
             btnAddBook.Click += btnAddBook_Click;
             // 

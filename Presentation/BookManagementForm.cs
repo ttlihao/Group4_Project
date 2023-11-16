@@ -1,10 +1,12 @@
 ﻿using Business.Entities;
 using DataAccess;
+using DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace e_Journal
     public partial class BookManagementForm : Form
     {
         private BookService bookService = new BookService();
+
         public BookManagementForm()
         {
             InitializeComponent();
@@ -28,9 +31,11 @@ namespace e_Journal
             dgvBookList.DataSource = result;
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnLoad_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var result = bookService.GetAllBooks();
+            dgvBookList.DataSource = null;
+            dgvBookList.DataSource = result;
         }
 
         private void BookManagementForm_FormClosed(object sender, FormClosedEventArgs e)
